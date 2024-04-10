@@ -18,6 +18,10 @@ app.use("/api/hotels/uploads", express.static(__dirname + "\\uploads"));
 
 app.use(router);
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
   const errorMessage = err.message || "Internal Server Error";
